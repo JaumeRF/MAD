@@ -3,12 +3,15 @@ package Calc;
 public class algorithms {
 
     public static int[] congruenceSolver(int a, int b, int mod) {
-        
+
+        a %= mod;
+        b %= mod;
         
         // * Si existe una solución entonces tendrá 'd' soluciones 🔥🔥🔥 
         // * Si solo tiene una solución:
         int d = mcdEuclidean(a, mod);
         int[] solutions = new int[d];
+        
         if (d == 1) {
             solutions[0] = oneSolutionCongruence(a, b, mod);
             return solutions; 
@@ -38,7 +41,7 @@ public class algorithms {
         
         return sol;
     }
-    
+
     // * 🧮 calcula el mcd entre dos números aplicando el algoritmo de euclides
     public static int mcdEuclidean(int a, int b) {
         if (a < b) {

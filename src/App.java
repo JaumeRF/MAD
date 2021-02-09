@@ -17,11 +17,15 @@ public class App {
         if (b % d != 0) {
             System.out.println("No tiene solución");
         } else {
-            System.out.println("la solución a la ecuación " + a + "x = " + b + " (mod " + mod + ") son: ");
+            System.out.println("Las soluciones a la ecuación " + a + "x = " + b + " (mod " + mod + ") son: ");
+            
             int[] sol = algorithms.congruenceSolver(a, b, mod);
+
             for (int i : sol) {
-                System.err.println(i + " ");
+                System.out.print(i + ", ");
             }
+            System.out.println("");
         }
+        scan.close();
     }
 }
